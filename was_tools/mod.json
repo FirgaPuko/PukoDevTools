@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "description": "模組的唯一標示符。"
+        },
+        "description": {
+            "type": "string",
+            "description": "模組說明。"
+        },
+        "resources": {
+            "type": "object",
+            "description": "模組資源檔的路徑組。",
+            "properties": {
+                "image": {
+                    "type": ["string", "object"],
+                    "format": "file-path"
+                }
+            }
+        }
+    }
+}
