@@ -7,7 +7,7 @@
             "description": "模組的唯一標示符。"
         },
         "description": {
-            "type": "string",
+            "type": ["string", "null"],
             "description": "模組說明。"
         },
         "resources": {
@@ -15,8 +15,19 @@
             "description": "模組資源檔的路徑組。",
             "properties": {
                 "image": {
-                    "type": ["string", "object"],
-                    "format": "file-path"
+                    "type": ["string", "array"],
+                    "format": "file-path",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "path": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 }
             }
         }
