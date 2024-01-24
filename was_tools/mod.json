@@ -1,5 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://firgapuko.github.io/PukoDevTools/was_tools/mod.json",
     "type": "object",
     "properties": {
         "id": {
@@ -10,26 +11,14 @@
             "type": ["string", "null"],
             "description": "模組說明。"
         },
-        "resources": {
-            "type": "object",
-            "description": "模組資源檔的路徑組。",
-            "properties": {
-                "image": {
-                    "type": ["string", "array"],
-                    "format": "file-path",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "string"
-                            },
-                            "path": {
-                                "type": "string"
-                            }
-                        }
-                    }
-                }
-            }
+        "author": {
+            "type": "string",
+            "description": "作者或機構名稱。"
+        },
+        "was_version": {
+            "type": "string",
+            "pattern": "[0-9]+\\.[0-9]+\\.[0-9]+",
+            "enum": ["1.0.0"]
         }
     }
 }
