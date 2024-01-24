@@ -12,13 +12,46 @@
             "description": "模組說明。"
         },
         "author": {
-            "type": "string",
-            "description": "作者或機構名稱。"
+            "type": ["string", "object"],
+            "description": "作者或機構名稱，也可以是物件類型。",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "description": "開發者信箱。",
+                    "format": "email"
+                },
+                "web": {
+                    "type": "string",
+                    "description": "開發者網站。",
+                    "format": "url"
+                }
+            }
         },
         "was_version": {
             "type": "string",
-            "pattern": "[0-9]+\\.[0-9]+\\.[0-9]+",
-            "enum": ["1.0.0", "*"]
+            "enum": ["1.0.0", "all"],
+            "description": "對應的WAS_Core版本，通常而言只要第一個數字(發行號)相同，那麼WAS_Core都可以向下兼容。"
+        },
+        "mod_version": {
+            "type": "string",
+            "description": "模組的版本號"
+        },
+        "dependence": {
+            "type": "array",
+            "description": "相依的模組列表。",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "mod_id": {
+                        "type": "string",
+                        "description": "相依的模組ID。"
+                    },
+                    "mod_version": {
+                        "type": "string",
+                        "description": "相依的模組版本，通常而言只要第一個數字(發行號)相同，那麼模組都可以向下兼容。"
+                    }
+                }
+            }
         }
     }
 }
