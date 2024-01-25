@@ -8,11 +8,18 @@
             "description": "模組的唯一標示符。"
         },
         "description": {
-            "type": ["string", "null"],
+            "type": [
+                "string",
+                "null"
+            ],
             "description": "模組說明。"
         },
         "author": {
-            "type": ["string", "object", "array"],
+            "type": [
+                "string",
+                "object",
+                "array"
+            ],
             "description": "作者或機構名稱，也可以是物件類型。",
             "properties": {
                 "email": {
@@ -27,7 +34,10 @@
                 }
             },
             "items": {
-                "type": ["string", "object"],
+                "type": [
+                    "string",
+                    "object"
+                ],
                 "properties": {
                     "email": {
                         "type": "string",
@@ -44,7 +54,10 @@
         },
         "was_version": {
             "type": "string",
-            "enum": ["1.0.0", "all"],
+            "enum": [
+                "1.0.0",
+                "all"
+            ],
             "description": "對應的WAS_Core版本，通常而言只要第一個數字(發行號)相同，那麼WAS_Core都可以向下兼容。"
         },
         "mod_version": {
@@ -71,10 +84,19 @@
         "tag": {
             "type": "array",
             "uniqueItems": true,
-            "enum": [
-                "resources pack", "expansion", "optimization"
-            ]
+            "items": {
+                "enum": [
+                    "resources pack",
+                    "expansion",
+                    "optimization"
+                ]
+            }
         }
     },
-    "required": ["id", "was_version", "mod_version", "tag"]
+    "required": [
+        "id",
+        "was_version",
+        "mod_version",
+        "tag"
+    ]
 }
