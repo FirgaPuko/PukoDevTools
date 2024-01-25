@@ -15,12 +15,8 @@
             "description": "模組說明。"
         },
         "author": {
-            "type": [
-                "string",
-                "object",
-                "array"
-            ],
-            "description": "作者或機構名稱，也可以是物件類型。",
+            "type": "object",
+            "description": "作者或開發機構資訊。",
             "properties": {
                 "email": {
                     "type": "string",
@@ -31,23 +27,12 @@
                     "type": "string",
                     "description": "開發者網站。",
                     "format": "url"
-                }
-            },
-            "items": {
-                "type": [
-                    "string",
-                    "object"
-                ],
-                "properties": {
-                    "email": {
-                        "type": "string",
-                        "description": "開發者信箱。",
-                        "format": "email"
-                    },
-                    "web": {
-                        "type": "string",
-                        "description": "開發者網站。",
-                        "format": "url"
+                },
+                "names": {
+                    "type" : "array",
+                    "description": "參與的開發者。",
+                    "items": {
+                        "type" : "string"
                     }
                 }
             }
