@@ -12,7 +12,7 @@
             "description": "模組說明。"
         },
         "author": {
-            "type": ["string", "object"],
+            "type": ["string", "object", "array"],
             "description": "作者或機構名稱，也可以是物件類型。",
             "properties": {
                 "email": {
@@ -24,6 +24,21 @@
                     "type": "string",
                     "description": "開發者網站。",
                     "format": "url"
+                }
+            },
+            "items": {
+                "type": ["string", "object"],
+                "properties": {
+                    "email": {
+                        "type": "string",
+                        "description": "開發者信箱。",
+                        "format": "email"
+                    },
+                    "web": {
+                        "type": "string",
+                        "description": "開發者網站。",
+                        "format": "url"
+                    }
                 }
             }
         },
@@ -52,6 +67,14 @@
                     }
                 }
             }
+        },
+        "tag": {
+            "type": "array",
+            "uniqueItems": true,
+            "enum": [
+                "resources pack", "expansion", "optimization"
+            ]
         }
-    }
+    },
+    "required": ["id", "was_version", "mod_version", "tag"]
 }
