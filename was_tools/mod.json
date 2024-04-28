@@ -15,7 +15,7 @@
             "description": "模組說明。"
         },
         "author": {
-            "type": "object",
+            "type": ["object", "string"],
             "description": "作者或開發機構資訊。",
             "properties": {
                 "email": {
@@ -37,13 +37,13 @@
                 }
             }
         },
-        "was_version": {
+        "core_version": {
             "type": "string",
             "enum": [
                 "1.0.0",
                 "all"
             ],
-            "description": "對應的WAS_Core版本，通常而言只要第一個數字(發行號)相同，那麼WAS_Core都可以向下兼容。"
+            "description": "對應的遊戲版本，通常而言只要第一個數字(發行號)相同，那麼WAS_Core都可以向下兼容。"
         },
         "mod_version": {
             "type": "string",
@@ -71,16 +71,19 @@
             "uniqueItems": true,
             "items": {
                 "enum": [
-                    "resources pack",
+                    "resources_pack",
                     "expansion",
                     "optimization"
                 ]
             }
+        },
+        "main": {
+            "type": "string"
         }
     },
     "required": [
         "id",
-        "was_version",
+        "core_version",
         "mod_version",
         "tag"
     ]

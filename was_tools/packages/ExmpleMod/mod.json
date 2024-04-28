@@ -1,0 +1,14 @@
+{
+    "id": "exmple_mod",
+    "description": "Example mod.",
+    "author": "Firga Puko",
+    "was_version": "all",
+    "mod_version": "1.0.0",
+    "dependence": [
+        {
+            "mod_id": "main",
+            "mod_version": "all"
+        }
+    ],
+    "tag": []
+}
